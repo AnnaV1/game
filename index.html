@@ -9,8 +9,8 @@
         <div>Paklikšķinies</div>
         <form id="forma"> </form>
         <script>
-            let pirmie = [1,2,3,4,5];
-                let otrie = [1,4,9,16,25];
+            let pirmie = ["first.png","first.png","first.png"];
+                let otrie = ["hover.png","hover.png", "hover.png"];
             function tabula(){
                 
                 console.log(Math.round(Math.random() * 10))
@@ -23,12 +23,16 @@
                 let i=document.getElementsByClassName("rinda").length;
                 let divs = document.createElement("DIV"); divs.setAttribute("class","rinda");
                 for (let k = 0; k < n; k++) {
-                let ievads1 = document.createElement("INPUT");
-                ievads1.type="button";
+                let ievads1 = document.createElement("IMG");
+                ievads1.src= pirmie[k];
                  divs.appendChild(ievads1);
+                 ievads1.style = "width:50px; height:50px";
                  ievads1.onclick=()=>{
-                    ievads1.style= "background-color: #4CAF50";}
+                     
+                ievads1.src= otrie[k];
+                ievads1.style = "width:50px; height:50px";
                 }
+                
                 document.getElementById("forma").appendChild(divs);
                 }
                
