@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
+<!-- saved from url=(0106)file://ri.riga.lv/rv1g/Audzekni/avostrikova2/My%20Documents/NetBeansProjects/Tabula/public_html/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Tabula</title>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-       
-     
-    </body>
-</html>
+        <div>Paklikšķinies</div>
+        <form id="forma"> 
+        <script>
+            let pirmie = [1,2,3,4,5];
+                let otrie = [1,4,9,16,25];
+            function tabula(){
+                
+                console.log(Math.round(Math.random() * 10))
+                let empty = [];
+                
+                
+                
+                n=20;
+                for (let r = 0; r < n; r++) {
+                let i=document.getElementsByClassName("rinda").length;
+                let divs = document.createElement("DIV"); divs.setAttribute("class","rinda");
+                for (let k = 0; k < n; k++) {
+                let ievads1 = document.createElement("INPUT");
+                ievads1.type="button";
+                 divs.appendChild(ievads1);
+                 ievads1.onclick=()=>{
+                    ievads1.style= "background-color: #4CAF50";}
+                }
+                document.getElementById("forma").appendChild(divs);
+                }
+               
+                    
+                }
+               
+              
+         tabula(); 
+        </script>
+    
+
+</body></html>
