@@ -9,36 +9,66 @@
         <div>Paklikšķinies</div>
         <form id="forma"> </form>
         <script>
-            let pirmie = ["img/first.png","img/first.png","img/first.png"];
-                let otrie = ["img/hover.png","img/hover.png", "img/hover.png"];
-            function tabula(){
+            let pirmie = ["img/a0.png","img/a1.jpg","img/a2.jpg"];
+                let otrie = ["img/b0.png","img/b1.png", "img/b2.jpg"];
                 
+            function tabula(){
+                n=3;
                 console.log(Math.round(Math.random() * 10))
                 let empty = [];
+                for (let i=0; i<n*n/2; i++) {
+                    empty.push(pirmie[i]);
+                    empty.push(otrie[i]);
+                }
                 
+                  for (let i=0; i<10; i++) {
+                      r=Math.floor(Math.random() * n*n);
+                      a=empty.splice(r,1);
+                      empty.push(a);
+                  }
+                  
+               
+
                 
-                
-                n=3;
+                let id1;
+                let id2;
+                let c = false;
                 for (let r = 0; r < n; r++) {
                 let i=document.getElementsByClassName("rinda").length;
                 let divs = document.createElement("DIV"); divs.setAttribute("class","rinda");
                 for (let k = 0; k < n; k++) {
                 let ievads1 = document.createElement("IMG");
-                ievads1.src= pirmie[k];
+                ievads1.src= "img/hover.jpg";
                  divs.appendChild(ievads1);
                  ievads1.style = "width:50px; height:50px";
+                 ievads1.setAttribute("id",""+r*n+k);
                  ievads1.onclick=()=>{
+                    if (c) {
+                        c=false;
+                        ievads1.src= empty[r*n+k];
+                        id2 = ievads1.getAttribute("id");
+                        //alert (" ");
+                        //setTimeout(myFunction(id1,id2), 3000);
+                       
                      
-                ievads1.src= otrie[k];
-                ievads1.style = "width:50px; height:50px";
-                }
+ 
+                    } else {c = true;
+                        ievads1.src= empty[r*n+k];
+                        id1 = ievads1.getAttribute("id");
+                    }
+                        
                 
+            }
                 document.getElementById("forma").appendChild(divs);
-                }
+                
             }
                     
                 }
-               
+            }
+                function myFunction(id1,id2) {
+                document.getElementById(id2).src = "img/hover.jpg";
+                document.getElementById(id1).src = "img/hover.jpg";
+                           }
               
          tabula(); 
         </script>
