@@ -5,7 +5,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body id="body">
         <div>Paklikšķinies</div>
         <form id="forma"> </form>
         <script>
@@ -66,10 +66,10 @@
                 }
             }
                 function aizver(id1,id2) {
-                function myFunction() {
-  document.style.pointerEvents = "none";
+   function myFunction() {
+  document.getElementById("body").style.pointerEvents = "none";
 }
-                        myFunction();
+                        myFunction();                
                 document.getElementById(id2).src = "img/hover.jpg";
                 document.getElementById(id1).src = "img/hover.jpg";
                            }
