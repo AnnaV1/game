@@ -1,82 +1,110 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tabula</title>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body id="body">
         <div>Paklikšķinies</div>
         <form id="forma"> </form>
+        <label for="quantity">Rindas:</label>
+        <input type="number" id="quantity" name="quantity" min="2" max="8" step = "2">
+        <button onclick="tabula()">Spēlēt</button>
         <script>
-            let pirmie = ["img/a0.jpg","img/a1.jpg","img/a2.jpg","img/a3.jpg","img/a4.jpg","img/a5.jpg","img/a6.jpg","img/a7.jpg"];
-                let otrie = ["img/b0.jpg","img/b1.jpg", "img/b2.jpg","img/b3.jpg","img/b4.jpg","img/b5.jpg","img/b6.jpg","img/b7.jpg"];
+            let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jpg", "img/a5.jpg", "img/a6.jpg", "img/a7.jpg"];
+            let otrie = ["img/b0.jpg", "img/b1.jpg", "img/b2.jpg", "img/b3.jpg", "img/b4.jpg", "img/b5.jpg", "img/b6.jpg", "img/b7.jpg"];
+            var j=0;
+
+            function tabula() {
+                let n = document.getElementById("quantity").value;
                 
-            function tabula(){
-                n=4;
                 let empty = [];
-                for (let i=0; i<n*n/2; i++) {
+                for (let i = 0; i < n * n / 2; i++) {
                     empty.push(pirmie[i]);
                     empty.push(otrie[i]);
                 }
-                
-                  for (let i=0; i<20; i++) {
-                      r=Math.floor(Math.random() * n*n);
-                      a=empty.splice(r,1);
-                      empty.push(a);
-                  }
-                  
-               
 
-                
+                for (let i = 0; i < 20; i++) {
+                    r = Math.floor(Math.random() * n * n);
+                    a = empty.splice(r, 1);
+                    empty.push(a);
+                }
+
+
+
+
                 let id1;
                 let id2;
                 let c = false;
                 for (let r = 0; r < n; r++) {
-                let i=document.getElementsByClassName("rinda").length;
-                let divs = document.createElement("DIV"); divs.setAttribute("class","rinda");
-                for (let k = 0; k < n; k++) {
-                let ievads1 = document.createElement("IMG");
-                ievads1.src= "img/back.jpg";
-                 divs.appendChild(ievads1);
-                 ievads1.style = "width:100px; height:100px";
-                 ievads1.setAttribute("id",""+r*n+k);
-                 ievads1.onclick=()=>{
-                    if (c) {
-                        c=false;
-                        ievads1.src= empty[r*n+k];
-                        id2 = ievads1.getAttribute("id");
-                        function myFunction() {
-                               document.getElementById("body").style.pointerEvents = "none";
+                    let i = document.getElementsByClassName("rinda").length;
+                    let divs = document.createElement("DIV");
+                    divs.setAttribute("class", "rinda");
+                    for (let k = 0; k < n; k++) {
+                        let ievads1 = document.createElement("IMG");
+                        ievads1.src = "img/back.jpg";
+                        divs.appendChild(ievads1);
+                        ievads1.style = "width:100px; height:100px";
+                        ievads1.setAttribute("id", "" + r * n + k);
+                        ievads1.onclick = () => {
+                            if (c) {
+                                c = false;
+                                ievads1.src = empty[r * n + k];
+                                id2 = ievads1.getAttribute("id");
+                                var str1 = document.getElementById(id1).src;
+                                var str2 = document.getElementById(id2).src;
+                                var pirmais = str1.split("img/")[1].substring(1, 2);
+                                var otrais = str2.split("img/")[1].substring(1, 2);
+                                if (pirmais != otrais) {
+                                    setTimeout(aizver, 1000, id1, id2);
+                                } else {
+                                    function myFunction() {
+                                        document.getElementById("body").style.pointerEvents = "auto";
+                                        
+                                        
+                                    }
+                                    myFunction();
+                                    i++;
+                                    
+                                    console.log(i);
+                                    j++;
+                                     if(j==n*n/2){
+                                         alert(j);
+                                     }
+                                    setTimeout(wait, 1000);
+                                   
+                                }
+                                myFunction();
+                                setTimeout(aizver, 1000, id1, id2);
+                                
+
+
+                            } else {
+                                c = true;
+                                ievads1.src = empty[r * n + k];
+                                id1 = ievads1.getAttribute("id");
+                                
+                            }
+
+
                         }
-                        myFunction();
-                        setTimeout(aizver, 1000, id1, id2);
-                       
-                     
- 
-                    } else {c = true;
-                        ievads1.src= empty[r*n+k];
-                        id1 = ievads1.getAttribute("id");
+                        document.getElementById("forma").appendChild(divs);
+
                     }
-                        
-                
-            }
-                document.getElementById("forma").appendChild(divs);
-                
-            }
-                    
+
                 }
             }
-                function aizver(id1,id2) {
-                         function myFunction() {
-                               document.getElementById("body").style.pointerEvents = "auto";
-                         }
+            function aizver(id1, id2) {
+                function myFunction() {
+                    document.getElementById("body").style.pointerEvents = "auto";
+                }
                 myFunction();
                 document.getElementById(id2).src = "img/back.jpg";
                 document.getElementById(id1).src = "img/back.jpg";
-                           }
-              
-         tabula(); 
-        </script>
-    
+            }
 
-</body></html>
+            tabula();
+        </script>
+
+
+    </body></html>
