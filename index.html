@@ -6,16 +6,23 @@
     </head>
     <body id="body">
         <div>Paklikšķinies</div>
-        <form id="forma"> </form>
         <label for="quantity">Rindas:</label>
         <input type="number" id="quantity" name="quantity" min="2" max="8" step = "2">
-        <button onclick="tabula()">Spēlēt</button>
+        <button onclick="removelast();tabula()">Sākt jaunu spēli!</button>
+		<form id="forma"> </form>
         <script>
             let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jpg", "img/a5.jpg", "img/a6.jpg", "img/a7.jpg"];
             let otrie = ["img/b0.jpg", "img/b1.jpg", "img/b2.jpg", "img/b3.jpg", "img/b4.jpg", "img/b5.jpg", "img/b6.jpg", "img/b7.jpg"];
             var j=0;
-
+	
+			function removelast() {
+				while (document.getElementById("forma").hasChildNodes()) {  
+					document.getElementById("forma").removeChild(document.getElementById("forma").firstChild);
+				}
+			}
+			
             function tabula() {
+				
                 let n = document.getElementById("quantity").value;
                 
                 let empty = [];
@@ -56,29 +63,24 @@
                                 var pirmais = str1.split("img/")[1].substring(1, 2);
                                 var otrais = str2.split("img/")[1].substring(1, 2);
                                 if (pirmais != otrais) {
-                                    setTimeout(aizver, 100, id1, id2);
+                                    setTimeout(aizver, 1000, id1, id2);
                                 } else {
                                     function myFunction() {
-                                        document.getElementById("body").style.pointerEvents = "auto";
-                                        
-                                        
+                                        document.getElementById("body").style.pointerEvents = "none";
                                     }
                                     myFunction();
-                                    i++;
-                                    
-                                    console.log(i);
+
                                     j++;
-                                     if(j==n*n/2){
-                                         alert(j);
-                                     }
+                                    if(j==n*n/2){
+                                         alert(UZVARA!);
+                                    }
                                     setTimeout(wait, 1000);
                                    
                                 }
+								function myFunction() {
+                                    document.getElementById("body").style.pointerEvents = "auto";
+                                }
                                 myFunction();
-                                setTimeout(aizver, 1000, id1, id2);
-                                
-
-
                             } else {
                                 c = true;
                                 ievads1.src = empty[r * n + k];
@@ -94,7 +96,9 @@
 
                 }
             }
+			function wait(){}
             function aizver(id1, id2) {
+			    console.log("wait");
                 function myFunction() {
                     document.getElementById("body").style.pointerEvents = "auto";
                 }
