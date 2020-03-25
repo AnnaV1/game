@@ -7,7 +7,7 @@
     <body id="body">
         <div>Paklikšķinies</div>
         <label for="quantity">Rindas:</label>
-        <input type="number" id="quantity" name="quantity" min="2" max="4" step = "2">
+        <input type="number" id="quantity" name="quantity" min="2" max="8" step = "2">
         <button onclick="removelast();tabula()">Sākt jaunu spēli!</button>
 		<form id="forma"> </form>
         <script>
@@ -63,16 +63,12 @@
                                 var pirmais = str1.split("img/")[1].substring(1, 2);
                                 var otrais = str2.split("img/")[1].substring(1, 2);
                                 if (pirmais != otrais) {
-					function myFunction() {
-                               document.getElementById("body").style.pointerEvents = "none";
-                        }
                                     setTimeout(aizver, 1000, id1, id2);
                                 } else {
                                     function myFunction() {
                                         document.getElementById("body").style.pointerEvents = "none";
                                     }
-					myFunction();
-                                    
+                                    myFunction();
 
                                     j++;
                                     if(j==n*n/2){
