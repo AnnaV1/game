@@ -1,0 +1,256 @@
+body {
+    font: 20px Helvetica, sans-serif;
+    color: #4D4E4E;
+    background-color: #BECCE6;
+    line-height: 1.8;
+    
+}
+
+
+.topc1{
+/*    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;*/
+/*    width: 80%;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+div.form
+{   padding-top: 20px;
+    display: block;
+    text-align: center;
+}
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin:0px;
+    border-left: 10px solid #C1C5CA;
+    border-top: 10px solid #C1C5CA;
+}
+.text-center {
+      text-align: center;
+  }
+
+.bg-1 {
+    background-color: #4D4E4E;
+}
+/*.bg-2 {
+    background-color: #C1C5CA;
+    padding-top: -10px;
+    padding-bottom: 0px;
+    padding-left: -300px;
+    padding-right: -100px;
+    position: static;
+}*/
+
+.button {
+    font: 15px Helvetica, sans-serif;
+    background-color: #4D4E4E;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+.victory{
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    margin-top: -50px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: white;
+    max-width: 400px;
+    border:1px solid #563640;
+    border-radius: 3px;
+    background-color: #714955;
+    left: 0;
+    right: 0;
+}
+/*.bg-2 {
+    background-color: #a0ecd0;  Light green 
+    color: #3e3e3e;
+}
+
+.bg-3 {
+    background-color: #94ddbc;  Sea green 
+    color: #714955;
+}
+
+.container-top{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-fluid {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+ 
+  
+  .text-center {
+      text-align: center;
+  }
+  
+  .game{
+      min-height: 49vh;
+  }
+  
+  .title {
+      font: 30px Verdana, sans-serif;
+  }
+  
+  .float-right{
+      float: right;
+  }
+  
+  .button-1 {
+    color: #4f1828 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #3ec487;
+    padding: 10px;
+    border: 4px solid #3ec487 !important;
+    border-radius: 3px;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+}
+
+.button-1:hover {
+    color: #714955 !important;
+    background: #ccf6e7;
+    border-color: #ccf6e7 !important;
+    transition: all 0.4s ease 0s;
+}
+  
+  .margin {
+      margin-bottom: 20px
+      
+  }
+  
+  
+  custom dropdown
+  
+  .custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  text-align: center;
+}
+
+.custom-dropdown select {
+  background-color: #3ec487;
+  color: #4f1828;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button;  hide default arrow in chrome OSX 
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after {   Custom dropdown arrow 
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before {   Custom dropdown arrow cover 
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.4);
+}
+
+table
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid black;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.selected{
+    background-color: #3ec487;
+}
+.cell{
+    background-color: #714955;
+}
+.guessed{
+    background-color: gray;
+}
+.victory{
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    margin-top: -100px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: white;
+    max-width: 400px;
+    border:1px solid #563640;
+    border-radius: 3px;
+    background-color: #714955;
+    left: 0;
+    right: 0;
+}*/
