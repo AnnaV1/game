@@ -59,10 +59,7 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
 
                                     j++;
                                     if(j==n*n/2){
-                                         function victory (){
-                                            victory.style = "display:inline-block"
-                                         } 
-                                         victory(true);
+                                         alert("UZVARA!");
                                     }
                                     setTimeout(wait, 1000);
                                    
@@ -92,7 +89,6 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
                 function myFunction() {
                     document.getElementById("body").style.pointerEvents = "auto";
                 }
-                
                 myFunction();
                 document.getElementById(id2).src = "img/back.jpg";
                 document.getElementById(id1).src = "img/back.jpg";
