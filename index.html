@@ -1,114 +1,36 @@
+  
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tabula</title>
+        <title>Fancy spēle</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script/script.js"></script>
+        <link rel="stylesheet" href="css/stils.css">
+        
     </head>
     <body id="body">
-        <div>Paklikšķinies</div>
-        <label for="quantity">Rindas:</label>
-        <input type="number" id="quantity" name="quantity" min="2" max="8" step = "2">
-        <button onclick="removelast();tabula()">Sākt jaunu spēli!</button>
-		<form id="forma"> </form>
-        <script>
-            let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jpg", "img/a5.jpg", "img/a6.jpg", "img/a7.jpg"];
-            let otrie = ["img/b0.jpg", "img/b1.jpg", "img/b2.jpg", "img/b3.jpg", "img/b4.jpg", "img/b5.jpg", "img/b6.jpg", "img/b7.jpg"];
-            var j=0;
-	
-			function removelast() {
-				while (document.getElementById("forma").hasChildNodes()) {  
-					document.getElementById("forma").removeChild(document.getElementById("forma").firstChild);
-				}
-			}
-			
-            function tabula() {
-				
-                let n = document.getElementById("quantity").value;
-                
-                let empty = [];
-                for (let i = 0; i < n * n / 2; i++) {
-                    empty.push(pirmie[i]);
-                    empty.push(otrie[i]);
-                }
+        <div class = "topc1 text-center"><h2>Šī ir ļoti fancy spēle</h2></div>
+        <div class = "topc2 text-center" >Kā tev sokas ar atvasināšanu, huh?</div>
+        <div class="text-center"> <label  for="quantity">Rindu skaits:</label>
+        <input type="number" id="quantity" name="quantity" min="2" max="4" step = "2">
+        <button class="button" onclick="removelast();tabula()">Sākt jaunu spēli!</button></div>
+        
+        <button  class="button-1" id="poga1" onclick = "victory.style.display = inline-block">cheat</button>
+        
+        <div class="victory" id="end" style="display: none">
+            <br>Wictory! Congratulations!<br>Vittoria! Congratulazioni!<br>Moves: <var id="skaits"></var> Time: <var id="time"></var> seconds<br>Try it once more!<br>
 
-                for (let i = 0; i < 20; i++) {
-                    r = Math.floor(Math.random() * n * n);
-                    a = empty.splice(r, 1);
-                    empty.push(a);
-                }
+            <button class = "button-1" onclick="wordsFiller(words,2,0)">2x2</button>
+            <button class = "button-1" onclick="wordsFiller(words,4,1)">4x4</button>
+            <button class = "button-1" onclick="wordsFiller(words,6,2)">6x6</button>
 
 
 
-
-                let id1;
-                let id2;
-                let c = false;
-                for (let r = 0; r < n; r++) {
-                    let i = document.getElementsByClassName("rinda").length;
-                    let divs = document.createElement("DIV");
-                    divs.setAttribute("class", "rinda");
-                    for (let k = 0; k < n; k++) {
-                        let ievads1 = document.createElement("IMG");
-                        ievads1.src = "img/back.jpg";
-                        divs.appendChild(ievads1);
-                        ievads1.style = "width:100px; height:100px";
-                        ievads1.setAttribute("id", "" + r * n + k);
-                        ievads1.onclick = () => {
-                            if (c) {
-                                c = false;
-                                ievads1.src = empty[r * n + k];
-                                id2 = ievads1.getAttribute("id");
-                                var str1 = document.getElementById(id1).src;
-                                var str2 = document.getElementById(id2).src;
-                                var pirmais = str1.split("img/")[1].substring(1, 2);
-                                var otrais = str2.split("img/")[1].substring(1, 2);
-                                if (pirmais != otrais) {
-                                    setTimeout(aizver, 1000, id1, id2);
-                                } else {
-                                    function myFunction() {
-                                        document.getElementById("body").style.pointerEvents = "none";
-                                    }
-                                    myFunction();
-
-                                    j++;
-                                    if(j==n*n/2){
-                                         alert("UZVARA!");
-                                    }
-                                    setTimeout(wait, 1000);
-                                   
-                                }
-								function myFunction() {
-                                    document.getElementById("body").style.pointerEvents = "auto";
-                                }
-                                myFunction();
-                            } else {
-                                c = true;
-                                ievads1.src = empty[r * n + k];
-                                id1 = ievads1.getAttribute("id");
-                                
-                            }
-
-
-                        }
-                        document.getElementById("forma").appendChild(divs);
-
-                    }
-
-                }
-            }
-			function wait(){}
-            function aizver(id1, id2) {
-			    console.log("wait");
-                function myFunction() {
-                    document.getElementById("body").style.pointerEvents = "auto";
-                }
-                myFunction();
-                document.getElementById(id2).src = "img/back.jpg";
-                document.getElementById(id1).src = "img/back.jpg";
-            }
-
-            tabula();
-        </script>
+        </div>
+        <div class="bg-2"><div class="form"><form id="forma" class="bg-1 center"></form></div>
+        </div>
+        
+         
 
 
     </body></html>
