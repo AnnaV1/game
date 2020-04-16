@@ -1,5 +1,7 @@
 
 
+/* global n */
+
 let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jpg", "img/a5.jpg", "img/a6.jpg", "img/a7.jpg"];
             let otrie = ["img/b0.jpg", "img/b1.jpg", "img/b2.jpg", "img/b3.jpg", "img/b4.jpg", "img/b5.jpg", "img/b6.jpg", "img/b7.jpg"];
             var j=0;
@@ -18,7 +20,8 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
 
                         // Get the <span> element that closes the modal
                         var span = document.getElementsByClassName("close")[0];
-
+                        var span1 = document.getElementsByClassName("closeb1")[0];
+                        var span2 = document.getElementsByClassName("closeb2")[0];
                         // When the user clicks the button, open the modal 
                         btn.onclick = function() {
                          modal.style.display = "block";
@@ -28,6 +31,15 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
                         span.onclick = function() {
                             modal.style.display = "none";
                                                         }
+                        span1.onclick = function() {
+                            modal.style.display = "none";
+                            b2();removelast();tabula()
+                        }
+                        span2.onclick = function() {
+                            modal.style.display = "none";
+                            b4();removelast();tabula()
+                        }
+                                                        
 
                         // When the user clicks anywhere outside of the modal, close it
                         window.onclick = function(event) {
@@ -36,10 +48,17 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
                           }
                         }
                     }
-                        
+                    
+                var n=0;
+                function b2(){
+                    n=2;
+                    
+                }
+                function b4(){
+                    n=4;
+                    
+                }
             function tabula() {
-				
-                let n = document.getElementById("quantity").value;
                 
                 let empty = [];
                 for (let i = 0; i < n * n / 2; i++) {
