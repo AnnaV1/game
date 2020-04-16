@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Fancy spēle</title>
@@ -10,15 +11,15 @@
     <body id="body">
         <div class = "topc1 text-center"><h2>Šī ir ļoti fancy spēle</h2></div>
         <div class = "topc2 text-center" >Kā tev sokas ar atvasināšanu, huh?</div>
-        <div class="text-center"> <label  for="quantity">Rindu skaits:</label>
-        <input type="number" id="quantity" name="quantity" min="2" max="4" step = "2">
-        <button class="button" onclick="removelast();tabula()">Sākt jaunu spēli!</button></div>
        
-        <div class="bg-2"><div class="form"><form id="forma" class="bg-1 center"></form></div>
+        
+       <div class="text-center"><button id="b2" class="button" onclick="b2();removelast();tabula()">2x2</button>
+           <button id="b4" class="button" onclick="b4();removelast();tabula()">4x4</button> </div>
+        <div class="bg-2"><div class="form"><form id="forma" class="bg-1 center"> </form></div>
         </div>
         
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn" class="button smol">the sneaky cheat button</button>
+            <div class="text-center"><button id="myBtn" class="button smol">the sneaky cheat button</button></div>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -27,11 +28,12 @@
               <div class="modal-content">
                 <span class="close">&times;</span>
                 <p class="text-center">Zicāns ar tevi lepotos</p>
+                <p class="text-center">Iepriecināsi vēlreiz?</p>
+                <div class="text-center"><button id="b2" class="button closeb1" >2x2</button>
+           <button id="b4" class="button closeb2" >4x4</button> </div>
+                
               </div>
 
             </div>
         
-         
-
-
     </body></html>
