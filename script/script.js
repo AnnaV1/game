@@ -1,3 +1,5 @@
+
+
 let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jpg", "img/a5.jpg", "img/a6.jpg", "img/a7.jpg"];
             let otrie = ["img/b0.jpg", "img/b1.jpg", "img/b2.jpg", "img/b3.jpg", "img/b4.jpg", "img/b5.jpg", "img/b6.jpg", "img/b7.jpg"];
             var j=0;
@@ -7,7 +9,34 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
 					document.getElementById("forma").removeChild(document.getElementById("forma").firstChild);
 				}
 			}
-			
+		window.onload = function() {
+   
+                        var modal = document.getElementById("myModal");
+
+                        // Get the button that opens the modal
+                        var btn = document.getElementById("myBtn");
+
+                        // Get the <span> element that closes the modal
+                        var span = document.getElementsByClassName("close")[0];
+
+                        // When the user clicks the button, open the modal 
+                        btn.onclick = function() {
+                         modal.style.display = "block";
+                                                }
+
+                        // When the user clicks on <span> (x), close the modal
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                                                        }
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                          if (event.target == modal) {
+                            modal.style.display = "none";
+                          }
+                        }
+                    }
+                        
             function tabula() {
 				
                 let n = document.getElementById("quantity").value;
@@ -59,7 +88,7 @@ let pirmie = ["img/a0.jpg", "img/a1.jpg", "img/a2.jpg", "img/a3.jpg", "img/a4.jp
 
                                     j++;
                                     if(j==n*n/2){
-                                         alert("UZVARA!");
+                                         document.getElementById("myBtn").click();
                                     }
                                     setTimeout(wait, 1000);
                                    
