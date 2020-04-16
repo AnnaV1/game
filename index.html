@@ -14,21 +14,23 @@
         <div class="text-center"> <label  for="quantity">Rindu skaits:</label>
         <input type="number" id="quantity" name="quantity" min="2" max="4" step = "2">
         <button class="button" onclick="removelast();tabula()">Sākt jaunu spēli!</button></div>
-        
-        <button  class="button-1" id="poga1" onclick = "victory.style.display = inline-block">cheat</button>
-        
-        <div class="victory" id="end" style="display: none">
-            <br>Wictory! Congratulations!<br>Vittoria! Congratulazioni!<br>Moves: <var id="skaits"></var> Time: <var id="time"></var> seconds<br>Try it once more!<br>
-
-            <button class = "button-1" onclick="wordsFiller(words,2,0)">2x2</button>
-            <button class = "button-1" onclick="wordsFiller(words,4,1)">4x4</button>
-            <button class = "button-1" onclick="wordsFiller(words,6,2)">6x6</button>
-
-
-
-        </div>
+       
         <div class="bg-2"><div class="form"><form id="forma" class="bg-1 center"></form></div>
         </div>
+        
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn" class="button smol">the sneaky cheat button</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="text-center">Zicāns ar tevi lepotos</p>
+              </div>
+
+            </div>
         
          
 
